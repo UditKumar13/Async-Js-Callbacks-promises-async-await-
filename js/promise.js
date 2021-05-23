@@ -1,4 +1,4 @@
-/*
+
 console.log("promise starts here");
 
 
@@ -82,6 +82,6 @@ console.log(values);
 
 // thats all 
 
-*/
+
 
 

@@ -1,4 +1,4 @@
-/*
+
 console.log("callbacks start here");
 
 
@@ -43,4 +43,3 @@ function createPost (post , callback){
 
 createPost({title:'post 3' , body  : 'this is the third post'},getPosts);
 
-*/
