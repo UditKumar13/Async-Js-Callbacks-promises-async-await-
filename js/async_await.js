@@ -1,5 +1,4 @@
-/*
-console.log("promise starts here");
+console.log("async await starts here");
 
 
 const posts = [
@@ -57,31 +56,35 @@ function createPost (post){
    
     }
 
-createPost({title:'post 3' , body  : 'this is the third post'}).then(getPosts)
-.catch(err=>console.log(err));
+    // Async await 
 
-// lets study abt 
-// Promise.all 
+    async function init(){
+       await createPost({title:'post 3' , body  : 'this is the third post'});
 
-const promise1 = Promise.resolve("Hello world !");
-const promise2 = 10;
+       getPosts();
+    }
+// when we write await , we are waiting for createPost to be done .
+// and then code move to getPosts() calling 
+    init();
 
-const promise3 = new Promise((resolve,reject)=>{
-setTimeout(resolve,2000,'Goodbye');
-});
-// in the fetch we have to use a extra then because to fomat the response usually in json format 
-const promise4 = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json());
+    // this was await with promise 
 
-Promise.all([promise1 , promise2, promise3,promise4]).then((values)=>{
-console.log(values);
-});
 
-// because our promise 3 is taking 2 ms , thats why the output will also depend on the 
-// longest time of any promise in promise all
-// whatever time the longest promise takes , promise.all also takes that 
 
-// thats all 
+// now await with the fetch 
 
-*/
+async function fetchUsers(){
 
+    const res =  await fetch ('https://jsonplaceholder.typicode.com/users');
+
+    const data = await res.json();
+
+    console.log(data);
+
+}
+
+//cleaner the callback 
+
+
+fetchUsers();
 
